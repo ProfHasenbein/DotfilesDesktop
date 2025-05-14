@@ -3,8 +3,11 @@ In this repo I upload my Dotfiles for GNOME
 
 # Step 1 - clone the repo and checkout 
 ```
-git clone https://github.com/ProfHasenbein/DotfilesGNOME.git $HOME/DotfilesGNOME
-git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout
+cd ~
+git clone --bare git@github.com:ProfHasenbein/DotfilesGNOME.git DotfilesGNOME
+```
+```
+git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout .config/github-ssh-setup.sh
 ```
 # Step x - setup GitHub
 # step x - fonts
