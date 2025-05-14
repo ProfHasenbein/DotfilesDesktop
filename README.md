@@ -4,7 +4,7 @@ In this repo I upload my Dotfiles for GNOME
 # Step 1 - clone the repo and checkout 
 ```
 cd ~
-git clone --bare git@github.com:ProfHasenbein/DotfilesGNOME.git DotfilesGNOME
+git clone --bare https://github.com/ProfHasenbein/DotfilesGNOME.git DotfilesGNOME
 ```
 ```
 git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout .config/github-ssh-setup.sh
