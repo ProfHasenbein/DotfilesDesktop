@@ -14,13 +14,27 @@ git clone --bare git@github.com:ProfHasenbein/DotfilesGNOME.git $HOME/DotfilesGN
 ```
 # Step 3 - get .bashrc & installation script
 ```
-git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout main -- .bashrc .config/dotfiles-install.sh
+git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout main -- .bashrc .config/install-dotfiles.sh
 bash
-chmod +x ~/.config/dotfiles-install.sh
+chmod +x ~/.config/install-dotfiles.sh
 ```
-~/.config/dotfiles-install.sh  //spaeter hinzufuegen
-# step x - fonts
-# step x - Brave
-# Step x - Extensions
 
+# Step 4 - execute the script
+```
+chmod +x ~/.config/dotfiles-install.sh
+~/.config/dotfiles-install.sh
+```
+
+# step x - fonts
+select in the settings
+
+# step x - Brave
+import backgrounds and bookmarks
+
+# Step x - Extensions
+Go to *Extension Manager* and configure the Extendions. List of Extensions:
 ![image](https://github.com/user-attachments/assets/49fc15ed-97bf-43b1-ab97-9101ac9bac14)
+## Open Bar configuration
+import the file
+
+# Step x - Color Scheme
