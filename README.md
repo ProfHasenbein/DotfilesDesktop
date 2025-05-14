@@ -7,6 +7,7 @@ cd ~
 git clone --bare https://github.com/ProfHasenbein/DotfilesGNOME.git DotfilesGNOME
 ```
 ```
+git --git-dir=$HOME/DotfilesGNOME fetch
 git --git-dir=$HOME/DotfilesGNOME --work-tree=$HOME checkout .config/github-ssh-setup.sh
 ```
 # Step x - setup GitHub
