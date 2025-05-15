@@ -97,6 +97,10 @@ read -p "👉 Continue? [Y/n]: " install_programs
 if [[ "$install_programs" =~ ^[Yy]$ || -z "$install_programs" ]]; then
     echo "📥 Installing additional programs..."
 
+    # dnf packages
+    echo "📦 Installing fontawesome-fonts..."
+    sudo dnf install fontawesome-fonts
+
     # pip installieren (nur wenn nötig)
     echo "📦 Installing pip3..."
     sudo dnf install -y python3-pip
