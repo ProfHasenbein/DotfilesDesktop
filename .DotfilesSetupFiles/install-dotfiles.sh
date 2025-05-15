@@ -55,7 +55,7 @@ echo "✅ Multimedia support ready."
 
 
 ########################################
-# 6️⃣ JetBrains Mono installieren
+# 6️⃣ JetBrains Mono + Nerd Font installieren
 ########################################
 
 echo
@@ -64,26 +64,42 @@ echo "---------------------------------"
 
 FONT_DIR="$HOME/.local/share/fonts"
 TMP_DIR="/tmp/jetbrains-mono-font"
-ZIP_URL="https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip"
+NERD_TMP_DIR="/tmp/jetbrains-mono-nerd-font"
+JETBRAINS_ZIP_URL="https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip"
+NERD_FONT_ZIP_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
 
-mkdir -p "$FONT_DIR" "$TMP_DIR"
+mkdir -p "$FONT_DIR" "$TMP_DIR" "$NERD_TMP_DIR"
+
+# JetBrains Mono regulär
 cd "$TMP_DIR" || exit
-
 echo "📥 Downloading JetBrains Mono..."
-curl -L -o jetbrains.zip "$ZIP_URL"
+curl -L -o jetbrains.zip "$JETBRAINS_ZIP_URL"
 
-echo "📦 Extracting..."
+echo "📦 Extracting JetBrains Mono..."
 unzip -o jetbrains.zip -d "$TMP_DIR"
 
-echo "📂 Copying TTF files to $FONT_DIR..."
+echo "📂 Copying JetBrains Mono TTF files to $FONT_DIR..."
 cp "$TMP_DIR/fonts/ttf/"*.ttf "$FONT_DIR/"
+
+# Nerd Font JetBrains Mono
+cd "$NERD_TMP_DIR" || exit
+echo "📥 Downloading JetBrains Mono Nerd Font..."
+curl -L -o jetbrains-nerd.zip "$NERD_FONT_ZIP_URL"
+
+echo "📦 Extracting JetBrains Mono Nerd Font..."
+unzip -o jetbrains-nerd.zip -d "$NERD_TMP_DIR"
+
+echo "📂 Copying JetBrains Mono Nerd Font TTF files to $FONT_DIR..."
+cp "$NERD_TMP_DIR/"*.ttf "$FONT_DIR/"
 
 echo "🔄 Updating font cache..."
 fc-cache -f
 
-echo "🧹 Cleaning up..."
-rm -rf "$TMP_DIR"
-echo "✅ JetBrains Mono font installed!"
+echo "🧹 Cleaning up temporary files..."
+rm -rf "$TMP_DIR" "$NERD_TMP_DIR"
+
+echo "✅ JetBrains Mono and JetBrains Mono Nerd Font installed!"
+
 
 ########################################
 # 🔄 /etc/dnf/dnf.conf ersetzen
