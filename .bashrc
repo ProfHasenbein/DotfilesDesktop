@@ -34,7 +34,7 @@ eval "$(starship init bash)"
 
 ##Aliases
 #git bare repo dotfiles alias
-alias config='/usr/bin/git --git-dir=$HOME/DotfilesDesktop/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/DotfilesGNOME/ --work-tree=$HOME'
 alias off='shutdown -h now'
 alias ..='cd ..'
 alias ...='cd ../..'
