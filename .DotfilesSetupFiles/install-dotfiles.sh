@@ -91,13 +91,8 @@ echo "✅ JetBrains Mono font installed!"
 
 echo "⚙️ Replacing /etc/dnf/dnf.conf with custom version..."
 
-if [[ -f "/etc/dnf/dnf.conf" ]]; then
-    echo "📁 Backing up current dnf.conf to /etc/dnf/dnf.conf.bak..."
-    sudo cp /etc/dnf/dnf.conf /etc/dnf/dnf.conf.bak
-fi
-
-if [[ -f "DotfilesSetupFiles/dnf.conf" ]]; then
-    sudo cp DotfilesSetupFiles/dnf.conf /etc/dnf/dnf.conf
+if [[ -f "$HOME/.DotfilesSetupFiles/dnf.conf" ]]; then
+    sudo cp $HOME/.DotfilesSetupFiles/dnf.conf /etc/dnf/dnf.conf
     echo "✅ dnf.conf replaced successfully."
 else
     echo "❌ Custom dnf.conf not found at DotfilesSetupFiles/dnf.conf"
